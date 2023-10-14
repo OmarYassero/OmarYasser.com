@@ -1,0 +1,801 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Yasser</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+	<style>
+
+
+
+		@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&display=swap');
+
+		:root{
+				--yellow:#f9ca24;
+		}
+
+		*{
+				font-family: 'Nunito', sans-serif;
+				margin:0; padding:0;
+				box-sizing: border-box;
+				text-decoration: none;
+				outline: none; border:none;
+				text-transform: capitalize;
+				transition: all .2s linear;
+		}
+
+		*::selection{
+				background:var(--yellow);
+				color:#333;
+		}
+
+		html{
+				font-size: 62.5%;
+				overflow-x: hidden;
+		}
+
+		html::-webkit-scrollbar{
+				width:1.4rem;
+		}
+
+		html::-webkit-scrollbar-track{
+				background:#222;
+		}
+
+		html::-webkit-scrollbar-thumb{
+				background:var(--yellow);
+		}
+
+		body{
+				background:#111;
+				overflow-x: hidden;
+				padding-left: 35rem;
+		}
+
+		section{
+				min-height: 100vh;
+				padding:1rem;
+		}
+
+		.btn{
+				padding:.7rem 3rem;
+				background:#333;
+				color:#fff;
+				cursor: pointer;
+				margin-top: 1rem;
+				font-size: 2rem;
+				border-radius: 5rem;
+		}
+
+		.btn i{
+				padding:0 .5rem;
+				font-size: 1.8rem;
+		}
+
+		.btn:hover{
+				background:var(--yellow);
+		}
+
+		.heading{
+				text-align: center;
+				margin:0 6rem;
+				font-size: 4rem;
+				padding:1rem;
+				border-bottom: .1rem solid #fff4;
+				color:#fff;
+		}
+
+		.heading span{
+				color:var(--yellow);
+		}
+
+		header{
+				position: fixed;
+				top:0; left:0;
+				z-index: 1000;
+				height:100%;
+				width:35rem;
+				background:#1a1a1a;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-flow: column;
+				text-align: center;
+		}
+
+		header .user img{
+				height:17rem;
+				width:17rem;
+				border-radius: 50%;
+				object-fit: cover;
+				margin-bottom: 1rem;
+				border:.7rem solid var(--yellow);
+		}
+
+		header .user .name{
+				font-size: 3.5rem;
+				color:#fff;
+		}
+
+		header .user .post{
+				font-size: 2rem;
+				color:#eee;
+		}
+
+		header .navbar{
+				width:100%;
+		}
+
+		header .navbar ul{
+				list-style: none;
+				padding:1rem 3rem;
+		}
+
+
+		header .navbar ul li a{
+				display: block;
+				padding:1rem;
+				margin:1.5rem 0;
+				background:#333;
+				color:#fff;
+				font-size: 2rem;
+				border-radius: 5rem;
+		}
+
+		header .navbar ul li a:hover{
+				background:var(--yellow);
+		}
+
+		#menu{
+				position: fixed;
+				top:2rem; right:2rem;
+				background:#333;
+				color:#fff;
+				cursor: pointer;
+				font-size: 2.5rem;
+				padding:1rem 1.5rem;
+				z-index: 1000;
+				display: none;
+		}
+
+		.home{
+				display: flex;
+				justify-content: center;
+				flex-flow: column;
+				padding:0 15rem;
+		}
+
+		.home h3{
+				animation: bounceInLeft;
+				animation-duration: 2s; 
+				font-size: 2.5rem;
+				color:#fff;
+		}
+
+		.home h1{
+				animation: bounceInRight;
+				animation-duration: 1s; 
+				font-size:5rem;
+				color:#fff;
+		}
+
+		.home h1 span{
+				animation: bounceInRight;
+				animation-duration: 0.5s; 
+				color:var(--yellow);
+		}
+
+		.home p{
+				font-size:2rem;
+				color:#eee;
+				padding: 1rem 0;
+		}
+
+		.paragraph {
+			animation: bounceInDown; /* referring directly to the animation's @keyframe declaration */
+			animation-duration: 2s; /* don't forget to set a duration! */
+		}
+
+		.about .row{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				padding:1rem 0;
+		}
+
+		.about .row .info{
+				flex:1 1 48rem;
+				padding:2rem 1rem;
+				padding-left: 6rem;
+		}
+
+		.about .row .info h3{
+				font-size: 2rem;
+				color:var(--yellow);
+				padding:1rem 0;
+				font-weight: normal;
+		}
+
+		.about .row .info h3 span{
+				color:#eee;
+				padding:0 .5rem;
+		}
+
+		.about .row .counter{
+				flex:1 1 48rem;
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+		}
+
+		.about .row .counter .box{
+				width:20rem;
+				background:#222;
+				text-align: center;
+				padding: 2rem;
+				margin:2rem;
+		}
+
+		.about .row .counter .box span{
+				font-size: 4rem;
+				color:var(--yellow);
+		}
+
+		.about .row .counter .box h3{
+				font-size: 2rem;
+				color:#fff;
+		}
+
+		.education .box-container{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				padding:1rem 0;
+				padding-left: 3rem;
+		}
+
+		.education .box-container .box{
+				width:27rem;
+				margin:4rem 1rem;
+				padding-left: 4rem;
+				border-left: .2rem solid #fff;
+				position: relative;
+		}
+
+		.education .box-container .box span{
+				font-size: 1.3rem;
+				background:#222;
+				color:#fff;
+				border-radius: 5rem;
+				padding:.5rem 2.5rem;
+		}
+
+		.education .box-container .box h3{
+				font-size: 2rem;
+				color:#fff;
+				padding-top: 1.5rem;
+		}
+
+		.education .box-container .box p{
+				font-size: 1.4rem;
+				color:#eee;
+				padding: 1rem 0;
+		}
+
+		.education .box-container .box i{
+				position: absolute;
+				top:-1.5rem; left:-2.5rem;
+				height:5rem;
+				width: 5rem;
+				border-radius: 50%;
+				line-height: 5rem;
+				text-align: center;
+				font-size: 2rem;
+				color:#fff;
+				background:var(--yellow);
+		}
+
+		.portfolio .box-container{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				padding:2rem 0;
+		}
+
+		.portfolio .box-container .box{
+				height: 20rem;
+				width:26rem;
+				border-radius: 1rem;
+				margin:2rem;
+				overflow: hidden;
+				cursor: pointer;
+		}
+
+		.portfolio .box-container .box img{
+				height:100%;
+				width:100%;
+				object-fit: cover;
+		}
+
+		.portfolio .box-container .box:hover img{
+				transform: scale(1.2);
+		}
+
+		.left {
+		}
+
+		.contact .row{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+		}
+
+		.contact .row .content{
+				flex:1 1 30rem;
+				padding:4rem;
+				padding-bottom: 0;
+		}
+
+		.contact .row form{
+				flex:1 1 45rem;
+				padding:2rem;
+				margin:2rem;
+				margin-bottom: 4rem;
+		}
+
+		.contact .row form .box{
+				padding:1.5rem;
+				margin:1rem 0;
+				background:#3333;
+				color:#fff;
+				text-transform: none;
+				font-size: 1.7rem;
+				width:100%;
+		}
+
+		.contact .row form .box::placeholder{
+				text-transform: capitalize;
+		}
+
+		.contact .row form .message{
+				height: 15rem;
+				resize: none;
+		}
+
+		.contact .row .content .title{
+				text-transform: uppercase;
+				color:#fff;
+				font-size: 3rem;
+				padding-bottom: 2rem;
+		}
+
+		.contact .row .content .info h3{
+				display: flex;
+				align-items: center;
+				font-size: 2rem;
+				color:#eee;
+				padding:1rem 0;
+				font-weight: normal;
+		}
+
+		.contact .row .content .info h3 i{
+				padding-right: 1rem;
+				color:var(--yellow);
+		}
+
+		.top{
+				position: fixed;
+				bottom:7.5rem; right: 2rem;
+				z-index: 100;
+				display: none;
+		}
+
+		.social-media {
+			margin: 20px;
+		}
+
+		.social-media .circle {
+			margin: 10px;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/* media queries  */
+
+		@media (max-width:1200px){
+
+				html{
+						font-size: 55%;
+				}
+
+				.home{
+						padding:1rem 4rem;
+				}
+
+		}
+
+		@media (max-width:991px){
+
+			 header{
+					 left:-120%;
+			 }
+
+			 #menu{
+					 display: block;
+			 }
+
+			 header.toggle{
+				left:0%;
+			 }
+
+			 body{
+					 padding:0;
+			 }
+
+		}
+
+		@media (max-width:768px){
+
+				html{
+						font-size: 50%;
+				}
+
+		 }
+
+		@media (max-width:400px){
+
+				header{
+						width: 100vw;
+				}
+
+				.heading{
+						margin:0 3rem;
+				}
+
+				.about .row .counter .box{
+						width: 100%;
+				}
+
+				.education .box-container .box{
+						width:100%;
+				}
+
+				.portfolio .box-container .box{
+						width:100%;
+				}
+
+				.contact .row form{
+						margin:3rem 0;
+				}
+
+		 }
+	</style>
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+    <div class="user">
+        <img src="image1.jpeg" alt="">
+        <h3 class="name">Omar Yasser</h3>
+        <p class="post">front end developer</p>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#education">Work Experience</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+<div id="menu" class="fas fa-bars"></div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <h3>HI THERE !</h3>
+    <h1>I'M <span>Omar Yasser</span></h1>
+    <p class="animate__bounceInDown paragraph">I am a highly experienced and motivated frontend developer with over 6 years of experience in developing websites and applications. I have worked on a variety of projects ranging from small business websites to complex enterprise applications.
+    </p>
+    <a href="#about"><button class="btn">about me <i class="fas fa-user"></i></button></a>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+<h1 class="heading"> <span>about</span> me </h1>
+
+<div class="row">
+
+    <div class="info">
+        <h3> <span> name : </span> Omar Yasser </h3>
+        <h3> <span> age : </span> 17 </h3>
+<!--         <h3> <span> qualification : </span>Graduated </h3> -->
+        <h3> <span> post : </span> front end developer </h3>
+        <h3> <span> language : </span>  English , German , Arabic </h3>
+<!--         <a href="#"><button class="btn" > download CV <i class="fas fa-download"></i> </button></a> -->
+    </div>
+
+    <div class="counter">
+
+        <div class="box">
+            <span>6+</span>
+            <h3>years of experience</h3>
+        </div>
+
+        <div class="box">
+            <span>200+</span>
+            <h3>project completed</h3>
+        </div>
+
+        <div class="box">
+            <span>300+</span>
+            <h3> clients</h3>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- education section starts  -->
+
+<section class="education" id="education">
+
+<h1 class="heading"> my <span>Work experience</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2016</span>
+        <h3>HTML</h3>
+        <p> worked in elsharkawy company where i was working as a frontend developer </p>
+    </div>
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>CSS</span>
+        <h3>front end development</h3>
+        <p>i have taken a udacity course which provied me with great experience</p>
+    </div>
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2018</span>
+        <h3>Javascript</h3>
+        <p>Also i have done over 150 project in graphic design</p>
+    </div>
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2019</span>
+        <h3></h3>
+        <p>additionally i did a lot of logos in elsharkawy company and also as a freelancer</p>
+    </div>
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2020</span>
+        <h3>Backend development</h3>
+        <p>i started in backend field and i took a lot of courses and did Ecommerce , shopping , clincs  projects and more</p>
+    </div>
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2019</span>
+        <h3></h3>
+        <p>additionally i did a lot of logos in elsharkawy company and also as a freelancer</p>
+    </div>
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2020</span>
+        <h3>Backend development</h3>
+        <p>i started in backend field and i took a lot of courses and did Ecommerce , shopping , clincs  projects and more</p>
+    </div>
+
+    <div class="box">
+        <i class="fas fa-graduation-cap"></i>
+        <span>2021</span>
+        <h3>video editor</h3>
+        <p>i have created so many videos , intro , outro and more</p>
+    </div>
+
+</div>
+
+</section>
+
+<!-- education section ends -->
+
+<!-- portfolio section starts  -->
+
+<section class="portfolio" id="portfolio">
+
+<h1 class="heading"> my <span>portfolio</span> </h1>
+
+<div class="box-container">
+
+    <div class="box">    
+			<a href="https://clinc.omaryasser5.repl.co">
+				<img src="https://pmt.com.lb/wp-content/uploads/2021/05/hospital-1.jpg" alt="">
+			</a>
+    </div>
+
+	
+    <div class="box">    
+			<a href="https://resturant2.omaryasser5.repl.co">
+				<img src="https://top10cairo.com/wp-content/uploads/2015/12/best-burger-restaurant-places-in-cairo-696x365.jpg" alt="">
+			</a>
+    </div>
+
+	
+	 <div class="box">    
+			<a href="https://educaiton.omaryasser5.repl.co/">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQm89ELodmh-KGMBR3Al0J-KxZuKHvHcmUjQ&usqp=CAU" alt="">
+			</a>
+    </div>
+
+	
+	 <div class="box">    
+			<a href="https://greatlibrary.omaryasser5.repl.co/">
+				<img src="https://media.wired.com/photos/5fd2c29c2a4ddaf3b6389694/191:100/w_2580,c_limit/Gear-Books-Roundup-671406905.jpg" alt="">
+			</a>
+    </div>
+
+	
+	 <div class="box">    
+			<a href="https://right-and-left-animation.omaryasser5.repl.co/">
+				<img src="https://img-cdn.inc.com/image/upload/w_1920,h_1080,c_fill/images/panoramic/GettyImages-577674005_492115_zfpgiw.jpg" alt="">
+			</a>
+    </div>
+
+
+
+	 <div class="box">    
+			<a href="https://pets.omaryasser5.repl.co">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSioSS6To7OglHDO5nJ1Uummz9STDtqeaoo0w&usqp=CAU" alt="">
+			</a>
+
+		 
+    </div>
+
+		
+</div>
+	
+  <center>
+	  <a href="https://portofoliopart.omaryasser5.repl.co/" class="btn">see more</a>
+  </center>
+
+</section>
+
+<!-- portfolio section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+<h1 class="heading"> <span>contact</span> me </h1>
+
+<div class="row">
+
+    <div class="content">
+
+        <h3 class="title">contact info</h3>
+
+        <div class="info">
+            <h3> <i class="fas fa-envelope"></i> omar.yasser1919@gmail.com </h3>
+            <h3> <i class="fas fa-envelope"></i> omar.yasser2023@outlook.com </h3>
+        </div>
+
+    </div>
+
+    <form action="https://formsubmit.co/omar.yasser1919@gmail.com" method="POST" >
+
+        <input type="text" placeholder="name" class="box" name="Name"  required>
+        <input type="email" placeholder="email" class="box" name="Email" required>
+        <input type="text" placeholder="project" class="box" name="project" required>
+        <textarea name="message" id="" cols="30" rows="10" class="box message" placeholder="message" required> 
+        </textarea>
+       <button type="submit" class="btn"> send <i class="fas fa-paper-plane"></i> </button>
+<!-- 			<div class="social-media">
+      <center> 
+			  <button type="submit" class="btn circle center" >
+					<center>
+						<i class="fa-brands fa-linkedin-in"></i>
+					</center> 
+				</button>
+        <button type="submit" class="btn circle center" >
+					<center> 
+						<i class="fa-brands fa-github"></i>
+					</center> 
+				</button>
+			</center>
+		</div> -->
+    </form>
+
+</div>
+
+</section>
+
+<!-- contact section ends -->
+
+
+<!-- scroll top button  -->
+
+<a href="#home" class="top">
+    <img src="images/scroll-top-img.png" alt="">
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
